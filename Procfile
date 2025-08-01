@@ -1,1 +1,1 @@
-web: python start_server.py
+web: python hackrx_minimal.py

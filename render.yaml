@@ -3,8 +3,8 @@ services:
   - type: web
     name: hackrx-document-intelligence
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python start_server.py"
+    buildCommand: "echo 'No dependencies'"
+    startCommand: "python hackrx_minimal.py"
     plan: free
     healthCheckPath: /
     envVars:
