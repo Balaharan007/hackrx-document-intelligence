@@ -1,0 +1,14 @@
+# Render deployment configuration
+services:
+  - type: web
+    name: hackrx-document-intelligence
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -c gunicorn.conf.py main:app"
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: PORT
+        value: 8000

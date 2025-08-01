@@ -1,0 +1,59 @@
+# Environment Variables (NEVER PUSH)
+.env
+.env.local
+*.env
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Local Development Folders
+main/
+unused/
+utilities/
+tested/
+*.log
+temp/
+tmp/
+
+# Test Files (optional - keep test_webhook.py)
+*.test.log
+test_api_workflow.ps1
+fix_install.bat
+
+# Documentation (keep essential ones)
+PROJECT_ORGANIZATION.md
