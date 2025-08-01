@@ -25,14 +25,14 @@ def hackrx_endpoint(request_data: dict):
         # Extract data
         document_url = request_data.get("document_url", "")
         questions = request_data.get("questions", [])
-        
+
         # Simple mock responses
         answers = []
         for question in questions:
             answers.append(f"Mock answer for: {question}")
-        
+
         return {"answers": answers}
-        
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
