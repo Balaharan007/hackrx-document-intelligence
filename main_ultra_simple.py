@@ -34,13 +34,10 @@ else:
 # HackRx Bearer Token
 HACKRX_TOKEN = "96551ec397634df93a1a2212b9b798324340321ef3c785ce9f4593c92d8f1544"
 
-@app.on_event("startup")
-async def startup_event():
-    """Startup event handler"""
-    print("🚀 HackRx Document Intelligence API starting...")
-    print(f"📊 FastAPI version: {app.version}")
-    print(f"🤖 Gemini available: {'Yes' if model else 'No (mock mode)'}")
-    print("✅ API ready for HackRx submissions!")
+# Startup logging (simplified - no event handler)
+print("🚀 HackRx Document Intelligence API starting...")
+print(f"🤖 Gemini available: {'Yes' if model else 'No (mock mode)'}")
+print("✅ API ready for HackRx submissions!")
 
 @app.get("/")
 async def root():
@@ -117,21 +114,21 @@ async def hackrx_endpoint(request_data: dict):
             try:
                 prompt = f"""
                 Based on the following document content, answer the question accurately and concisely.
-                
+
                 Document Content:
                 {document_text[:2000]}  # Limit content to avoid token limits
-                
+
                 Question: {question}
-                
+
                 Answer:"""
-                
+
                 if model:
                     response = model.generate_content(prompt)
                     answer = response.text.strip()
                 else:
                     # Mock response when Gemini is not available
                     answer = f"Based on the document content, this question relates to: {question}. (Note: Gemini API not configured)"
-                
+
                 answers.append(answer)
 
             except Exception as e:
